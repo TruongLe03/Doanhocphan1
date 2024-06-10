@@ -1,0 +1,10 @@
+D:\Doanhocphan1\bin\Debug\Doanhocphan1.exe.config
+D:\Doanhocphan1\bin\Debug\Doanhocphan1.exe
+D:\Doanhocphan1\bin\Debug\Doanhocphan1.pdb
+D:\Doanhocphan1\obj\Debug\Doanhocphan1.csproj.AssemblyReference.cache
+D:\Doanhocphan1\obj\Debug\Doanhocphan1.Form1.resources
+D:\Doanhocphan1\obj\Debug\Doanhocphan1.Properties.Resources.resources
+D:\Doanhocphan1\obj\Debug\Doanhocphan1.csproj.GenerateResource.cache
+D:\Doanhocphan1\obj\Debug\Doanhocphan1.csproj.CoreCompileInputs.cache
+D:\Doanhocphan1\obj\Debug\Doanhocphan1.exe
+D:\Doanhocphan1\obj\Debug\Doanhocphan1.pdb
