@@ -54,7 +54,7 @@ namespace Doanhocphan1
             float angle = 270; // Góc quay ban đầu
             float crankRadius = 80;  // Bán kính trục khuỷu (r)
 
-            Pen p = new Pen(Brushes.Azure, 3.0f);  // bút vẽ đường tròn
+            Pen pencircle = new Pen(Brushes.Azure, 3.0f);  // bút vẽ đường tròn
             Pen centerPen = new Pen(Brushes.Yellow, 1.0f); // Bút vẽ tâm piston
             Pen pistonPen = new Pen(Brushes.White, 3.0f); // Bút vẽ xi lanh
 
@@ -81,7 +81,7 @@ namespace Doanhocphan1
                 PointF loc = PointF.Empty; // Điểm trên đường tròn mà trục khuỷu di chuyển tới trong mỗi khung hình
 
                 g.Clear(Color.Black);
-                g.DrawEllipse(p, area); // Vẽ đường tròn
+                g.DrawEllipse(pencircle, area); // Vẽ đường tròn
 
                 // Vẽ tâm đường tròn
                 g.FillEllipse(Brushes.Yellow, org.X - 5, org.Y - 5, 10, 10);
@@ -121,7 +121,7 @@ namespace Doanhocphan1
                 PointF pistonCenter = new PointF(pistonLeftEdgeX + pistonWidth / 2, pistonLeftEdgeY + pistonHeight / 2);
 
                 // Vẽ thanh nối & điểm tiếp xúc với piston
-                g.DrawLine(p, loc, pistonCenter);
+                g.DrawLine(pencircle, loc, pistonCenter);
                 g.FillEllipse(Brushes.Red, pistonCenter.X - 5, pistonCenter.Y - 5, 10, 10);
 
                 // Vẽ piston
@@ -140,12 +140,12 @@ namespace Doanhocphan1
                 // Vẽ hai đoạn thẳng vuông góc ở đầu bên trái của xi-lanh
                 PointF topLeftVertical = new PointF(cylinderX, cylinderY - 20); // Điểm trên cạnh trên hướng lên trên
                 PointF bottomLeftVertical = new PointF(cylinderX, cylinderY + cylinderHeight + 20); // Điểm trên cạnh dưới hướng xuống dưới
-                g.DrawLine(pistonPen, topLeft, topLeftVertical); // Đoạn thẳng trên hướng lên trên
-                g.DrawLine(pistonPen, bottomLeft, bottomLeftVertical); // Đoạn thẳng dưới hướng xuống dưới
+                g.DrawLine(pistonPen, topLeft, topLeftVertical);
+                g.DrawLine(pistonPen, bottomLeft, bottomLeftVertical);
 
                 fG.DrawImage(bmp, 0, 0);
 
-                angle += speed * 1.0f; // Tăng góc quay của trục khuỷu theo tốc độ
+                angle += speed * 2.0f; // Tăng góc quay của trục khuỷu theo tốc độ
                 if (angle >= 360)
                 {
                     angle = 0;

@@ -50,7 +50,7 @@
             this.lbSpeed.BackColor = System.Drawing.Color.Black;
             this.lbSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSpeed.ForeColor = System.Drawing.Color.Transparent;
-            this.lbSpeed.Location = new System.Drawing.Point(118, 9);
+            this.lbSpeed.Location = new System.Drawing.Point(117, 9);
             this.lbSpeed.Name = "lbSpeed";
             this.lbSpeed.Size = new System.Drawing.Size(25, 25);
             this.lbSpeed.TabIndex = 1;
