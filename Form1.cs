@@ -18,7 +18,7 @@ namespace Doanhocphan1
         public Form1()
         {
             InitializeComponent();
-            lbSpeed.Text = speed.ToString();
+            lbSpeed.Text = "Speed: X" + speed.ToString();
             this.Resize += new EventHandler(Form1_Resize); // Thêm sự kiện Resize
         }
 
@@ -51,10 +51,10 @@ namespace Doanhocphan1
 
         private void Draw()
         {
-            float angle = 270; // Góc quay ban đầu
+            float angle = 270;
             float crankRadius = 80;  // Bán kính trục khuỷu (r)
 
-            Pen pencircle = new Pen(Brushes.Azure, 3.0f);  // bút vẽ đường tròn
+            Pen p = new Pen(Brushes.Azure, 3.0f);
             Pen centerPen = new Pen(Brushes.Yellow, 1.0f); // Bút vẽ tâm piston
             Pen pistonPen = new Pen(Brushes.White, 3.0f); // Bút vẽ xi lanh
 
@@ -81,7 +81,7 @@ namespace Doanhocphan1
                 PointF loc = PointF.Empty; // Điểm trên đường tròn mà trục khuỷu di chuyển tới trong mỗi khung hình
 
                 g.Clear(Color.Black);
-                g.DrawEllipse(pencircle, area); // Vẽ đường tròn
+                g.DrawEllipse(p, area); // Vẽ đường tròn
 
                 // Vẽ tâm đường tròn
                 g.FillEllipse(Brushes.Yellow, org.X - 5, org.Y - 5, 10, 10);
@@ -121,7 +121,7 @@ namespace Doanhocphan1
                 PointF pistonCenter = new PointF(pistonLeftEdgeX + pistonWidth / 2, pistonLeftEdgeY + pistonHeight / 2);
 
                 // Vẽ thanh nối & điểm tiếp xúc với piston
-                g.DrawLine(pencircle, loc, pistonCenter);
+                g.DrawLine(p, loc, pistonCenter);
                 g.FillEllipse(Brushes.Red, pistonCenter.X - 5, pistonCenter.Y - 5, 10, 10);
 
                 // Vẽ piston
@@ -140,8 +140,8 @@ namespace Doanhocphan1
                 // Vẽ hai đoạn thẳng vuông góc ở đầu bên trái của xi-lanh
                 PointF topLeftVertical = new PointF(cylinderX, cylinderY - 20); // Điểm trên cạnh trên hướng lên trên
                 PointF bottomLeftVertical = new PointF(cylinderX, cylinderY + cylinderHeight + 20); // Điểm trên cạnh dưới hướng xuống dưới
-                g.DrawLine(pistonPen, topLeft, topLeftVertical);
-                g.DrawLine(pistonPen, bottomLeft, bottomLeftVertical);
+                g.DrawLine(pistonPen, topLeft, topLeftVertical); // Đoạn thẳng trên hướng lên trên
+                g.DrawLine(pistonPen, bottomLeft, bottomLeftVertical); // Đoạn thẳng dưới hướng xuống dưới
 
                 fG.DrawImage(bmp, 0, 0);
 
@@ -172,13 +172,13 @@ namespace Doanhocphan1
             if (keyData == Keys.Up)
             {
                 speed += 1.0f; // Tăng tốc độ lên 1.0f
-                lbSpeed.Text = speed.ToString(); // Cập nhật hiển thị tốc độ
+                lbSpeed.Text =  "Speed: X" + speed.ToString(); // Cập nhật hiển thị tốc độ
                 return true; // Chỉ ra rằng phím đã được xử lý
             }
             else if (keyData == Keys.Down)
             {
                 speed = Math.Max(0.0f, speed - 1.0f); // Giảm tốc độ xuống 1.0f, nhưng không dưới 0.0f
-                lbSpeed.Text = speed.ToString();
+                lbSpeed.Text = "Speed: X" + speed.ToString();
                 return true;
             }
             else if (keyData == Keys.Escape)
