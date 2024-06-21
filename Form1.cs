@@ -69,7 +69,7 @@ namespace Doanhocphan1
 
                 float pistonHeight = 80; // Chiều cao piston
                 float pistonWidth = 50;  // Chiều rộng piston
-                float cylinderWidth = 220;  // Chiều dài xi-lanh 
+                float cylinderWidth = 230;  // Chiều dài xi-lanh 
                 float cylinderHeight = 80;  // Chiều cao xi-lanh
                 float cylinderX = centerX + crankRadius;
                 float cylinderY = centerY - cylinderHeight / 2;
